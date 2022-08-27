@@ -19,7 +19,10 @@ group by album_name;
 --все исполнители, которые не выпустили альбомы в 2020 году
 select nickname from album_artist aa join album a on aa.id_album = a.id
 join artist a2 on a2.id = aa.id_artist
-where extract(year from year_of_issue) != 2020;
+where nickname not in (select nickname from album_artist aa join album a on aa.id_album = a.id
+join artist a2 on a2.id = aa.id_artist
+where extract(year from year_of_issue) = 2020);
+
 
 
 --названия сборников, в которых присутствует конкретный исполнитель (выберите сами)
@@ -51,10 +54,12 @@ where t.duration = (select min(duration) from track);
 
 
 --название альбомов, содержащих наименьшее количество треков
-select collection_name, count(id_track) from collection c 
-join track_collection tc on c.id = tc.id_collection
-group by c.collection_name
-having count(id_track) = (select min(id_track) from track_collection);
+select c.collection_name, count(track_name) from track_collection tc join track t on tc.id_track = t.id 
+join collection c on c.id = tc.id_collection
+group by c.collection_name 
+order by count(t.track_name)
+limit 1;
+
 
 
 

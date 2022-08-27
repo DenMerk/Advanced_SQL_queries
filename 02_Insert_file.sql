@@ -1,6 +1,6 @@
 INSERT INTO artist (id, nickname)
 	VALUES (1, 'Kipelov'),
-	       (2, 'Лесоповал')б
+	       (2, 'Лесоповал'),
 	       (3, 'Алла Пугачева'),
 	       (4, 'Король и шут'),
 		   (5, 'Муслим Магомаев'),
@@ -63,8 +63,8 @@ INSERT INTO track (id, track_name, duration, id_album)
 		   (12, 'Леший', 3.28, 4),
 		   (13, 'Надежда', 5.12, 5),
 		   (14, 'Охота', 4.11, 6),
-		   (15, 'Солнечный удар', 3.40, 7);
-		   (16, 'Огород', 4.23, 8)
+		   (15, 'Солнечный удар', 3.40, 7),
+		   (16, 'Огород', 4.23, 8);
 		  
    
 INSERT INTO collection (id, collection_name, year_of_issue)
@@ -94,7 +94,6 @@ INSERT INTO track_collection (id_track, id_collection)
 		   (11, 3),
 		   (12, 4),
 		   (13, 8),
-		   (15, 5);
-
-
-
+		   (15, 5)
+		   (16, 1;
+		  
